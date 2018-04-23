@@ -11,13 +11,13 @@ const PORT = process.env.PORT || 3001;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static('./client'));
+app.use(express.static('./client/build'));
 
 app.use(router);
-app.get('*', (req, res) => res.send('./public/index.html'));
+// app.get('*', (req, res) => res.send('./public/index.html'));
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds117821.mlab.com:17821/heroku_vmdxtn7d' || 'mongodb://localhost/react-nyt-homework');
+mongoose.connect(process.env.MONGODB_URI  || 'mongodb://localhost/react-nyt-homework');
 
 app.listen(PORT, function() {
   console.log(`App running on port ${PORT}!`);

@@ -1,0 +1,12 @@
+.search-container {
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 30px;
+  margin-top: 60px;
+}
+
+.container-header {
+  border-bottom: 2px solid gray;
+  font-size: 25px;
+  padding-bottom: 20px;
+}

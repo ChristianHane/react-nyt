@@ -17,7 +17,7 @@ app.use(router);
 app.get('*', (req, res) => res.send('./public/index.html'));
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/react-nyt-homework');
+mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds117821.mlab.com:17821/heroku_vmdxtn7d' || 'mongodb://localhost/react-nyt-homework');
 
 app.listen(PORT, function() {
   console.log(`App running on port ${PORT}!`);
